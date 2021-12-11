@@ -1,16 +1,14 @@
-
-function isSubsequence(sub, main) {
-  let subIndex = 0;
-  let mainIndex = 0;
-  while (mainIndex < main.length) {
-    if(sub[subIndex] == main[mainIndex]) subIndex++;
-    if(subIndex == sub.length) return true;
-    mainIndex++;
+function findLongestSubstring(str) {
+  let chars = {};
+  for (let ch of str) {
+    chars[ch] = (chars[ch] || 0) + 1;
+    console.log(chars);
   }
-  return false
+
+  return Object.keys(chars).length;
 }
- 
-console.log(isSubsequence('hello', 'hello world'));
-console.log(isSubsequence('sing', 'sting'));
-console.log(isSubsequence('abc', 'abracadabra'));
-console.log(isSubsequence('abc', 'acb'));
+
+console.log(findLongestSubstring('')); // 0
+console.log(findLongestSubstring('rithmschool')); // 7
+console.log(findLongestSubstring('thisisawesome')); // 6
+console.log(findLongestSubstring('bbbbbbb')); // 3
