@@ -74,7 +74,7 @@ class SinglyLinkedList {
 
     newNode.next = nextNode;
     prevNode.next = newNode;
-
+    this.length++;
     return true;
   }
 }
